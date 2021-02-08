@@ -6,7 +6,7 @@ namespace InheritanceTask
 {
     public class SalesPerson: Employee
     {
-        private int percent;
+        private readonly int percent;
 
         public SalesPerson(string name, decimal salary, int percent): base(name, salary)
         {
