@@ -4,11 +4,24 @@ using System.Text;
 
 namespace InheritanceTask
 {
-    //TODO: Create public class 'SalesPerson' here, which inherits from 'Employee' class
+    public class SalesPerson: Employee
+    {
+        private int percent;
 
-    //TODO: Define private integer field: 'percent'
+        public SalesPerson(string name, decimal salary, int percent): base(name, salary)
+        {
+            this.percent = percent;
+        }
 
-    //TODO: Define constructor with three parameters: 'name'(string), 'salary'(decimal) and 'percent'(int). Assign two first parameters to base class.
+        public override void SetBonus(decimal bonus)
+        {
+            int coefficient = 1;
+            if (percent > 100 && percent <= 200)
+                coefficient = 2;
+            else if(percent > 200)
+                coefficient = 3;
 
-    //TODO: Override public virtual method 'SetBonus', which increases bonus depending on percent
+            base.SetBonus(bonus * coefficient);
+        }
+    }
 }

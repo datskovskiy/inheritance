@@ -1,17 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 
 namespace InheritanceTask
 {
-    //TODO: Create public class 'Company' here
+    public class Company
+    {
+        private Employee[] employees;
 
-    //TODO: Define private field that is array of employees: 'employees'
+        public Company(Employee[] employees)
+        {
+            this.employees = employees;
+        }
 
-    //TODO: Define constructor that gets array of employees, and assign them to its field
+        public void GiveEverbodyBonus(decimal companyBonus)
+        {
+            foreach (var employee in employees)
+            {
+                employee.SetBonus(companyBonus);
+            }
+        }
 
-    //TODO: Define public method 'GiveEverbodyBonus' with parameter 'companyBonus', that set basic bonus to every employee in the company
-    //TODO: Define public method 'TotalToPay', that returns the total salary + bonus of all employees of the company 
-    //TODO: Define public method 'NameMaxSalary', that returns emloyee’s name who has maximum salary + bonus in the company 
+        public decimal TotalToPay()
+        {
+            return employees.Sum(c => c.ToPay());
+        }
+
+        public string NameMaxSalary()
+        {
+            return employees.OrderByDescending(emp => emp?.ToPay()).FirstOrDefault()?.Name;
+        }
+    }
 }
