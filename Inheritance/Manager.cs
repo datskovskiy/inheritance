@@ -6,7 +6,7 @@ namespace InheritanceTask
 {
     public class Manager : Employee
     {
-        private int quantity;
+        private readonly int quantity;
 
         public Manager(string name, decimal salary, int clientAmount) : base(name, salary)
         {

@@ -8,7 +8,7 @@ namespace InheritanceTask
 {
     public class Company
     {
-        private Employee[] employees;
+        private readonly Employee[] employees;
 
         public Company(Employee[] employees)
         {

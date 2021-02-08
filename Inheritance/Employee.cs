@@ -4,7 +4,7 @@ namespace InheritanceTask
 {
     public class Employee
     {
-        private string name;
+        private readonly string name;
         private decimal salary;
         private decimal bonus;
 
