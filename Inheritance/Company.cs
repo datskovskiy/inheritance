@@ -15,7 +15,7 @@ namespace InheritanceTask
             this.employees = employees;
         }
 
-        public void GiveEverbodyBonus(decimal companyBonus)
+        public void GiveEverybodyBonus(decimal companyBonus)
         {
             foreach (var employee in employees)
             {
